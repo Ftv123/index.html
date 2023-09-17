@@ -17,7 +17,7 @@
       padding: 10px;
     }
 
-    iframe {
+    video {
       width: 80%;
       margin-top: 5vh;
       height: 70vh;
@@ -38,13 +38,7 @@
     button:hover {
       background: #000000;
       color: #ffffff;
-    }
-
-    .controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
+  
     }
 
     .thumbnails {
@@ -74,7 +68,7 @@
 <blockquote>
   <p><strong>Los videos tutoriales en el nivel A1 están diseñados específicamente para principiantes que están dando sus primeros pasos en el aprendizaje del idioma inglés. Este nivel se enfoca en la introducción de conceptos y vocabulario esenciales que son fundamentales para comprender y comunicarse en inglés básico.</strong></p>
 </blockquote>
-<iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="https://ftv123.github.io/new" scrolling="no"></iframe>
+<video id="video" src="https://ia800509.us.archive.org/5/items/001-temario-y-bienvenida/001Temario%20y%20bienvenida.mp4" autoplay></video><br>
   <div class="controls">
     <button id="previous" onclick="previousVideo()">Anterior</button>
     <button id="next" onclick="nextVideo()">Siguiente</button>
