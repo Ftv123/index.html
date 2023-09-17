@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TUTORIA A1</title>
+  <style type="text/css">
+    body {
+      background-color: #ffffff;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    #header {
+      background: linear-gradient(to bottom, #256edc, #ffffff);
+      padding: 10px;
+    }
+
+    iframe {
+      width: 80%;
+      margin-top: 5vh;
+      height: 70vh;
+      border: 3px solid #f5f5f5;
+      border-radius: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      width: 45%;
+      background: #256edc;
+      border: none;
+      border-radius: 10px;
+      color: #ffffff;
+      padding: 10px;
+    }
+
+    button:hover {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .thumbnails {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas en la lista de reproducción */
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      border: 2px solid #f5f5f5;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .thumbnail img:hover {
+      border: 2px solid #000000;
+    }
+  </style>
+</head>
+<body>
+<div id="header">
+  <h1>VIDEO TUTORIA </h1>
+  <h1>NIVEL: A1</h1>
+</div>
+<blockquote>
+  <p><strong>Los videos tutoriales en el nivel A1 están diseñados específicamente para principiantes que están dando sus primeros pasos en el aprendizaje del idioma inglés. Este nivel se enfoca en la introducción de conceptos y vocabulario esenciales que son fundamentales para comprender y comunicarse en inglés básico.</strong></p>
+</blockquote>
+<iframe class="embed-responsive-item" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="" src="https://ftv123.github.io/new" scrolling="no"></iframe>
+  <div class="controls">
+    <button id="previous" onclick="previousVideo()">Anterior</button>
+    <button id="next" onclick="nextVideo()">Siguiente</button>
+  </div>
+  <div class="thumbnails">
+    <!-- Lista de reproducción en formato 3x3 -->
+    <div class="thumbnail" onclick="changeVideo(0)">
+      <img src="https://i.postimg.cc/Gh2kb12D/Presentacion.png" alt="Thumbnail 1">
+    </div>
+    <div class="thumbnail" onclick="changeVideo(1)">
+      <img src="https://i.postimg.cc/Gh2kb12D/Presentacion.png" alt="Thumbnail 2">
+    </div>
+    <div class="thumbnail" onclick="changeVideo(2)">
+      <img src="https://i.postimg.cc/Gh2kb12D/Presentacion.png" alt="Thumbnail 3">
+    </div>
+<div class="thumbnail" onclick="changeVideo(3)">
+      <img src="https://i.postimg.cc/Gh2kb12D/Presentacion.png" alt="Thumbnail 1">
+    </div>
+<div class="thumbnail" onclick="changeVideo(4)">
+      <img src="https://i.postimg.cc/Gh2kb12D/Presentacion.png" alt="Thumbnail 1">
+    </div>
+<div class="thumbnail" onclick="changeVideo(5)">
+      <img src="https://i.postimg.cc/Gh2kb12D/Presentacion.png" alt="Thumbnail 1">
+    </div>
+<div class="thumbnail" onclick="changeVideo(6)">
+      <img src="https://i.postimg.cc/Gh2kb12D/Presentacion.png" alt="Thumbnail 1">
+    </div>
+<div class="thumbnail" onclick="changeVideo(7)">
+      <img src="https://i.postimg.cc/Gh2kb12D/Presentacion.png" alt="Thumbnail 1">
+    </div>
+<div class="thumbnail" onclick="changeVideo(8)">
+      <img src="https://i.postimg.cc/Gh2kb12D/Presentacion.png" alt="Thumbnail 1">
+    </div>
+    <!-- Agrega más elementos de lista de reproducción aquí si es necesario -->
+  </div>
+
+  <script type="text/javascript">
+    let videos = ['https://ia800509.us.archive.org/5/items/001-temario-y-bienvenida/001Temario%20y%20bienvenida.mp4','https://ia903206.us.archive.org/26/items/002-segunda-clase/002%20segunda%20clase.mp4', 'https://www.flexclip.com/res/preview/720p/fashion-intro.mp4', 'https://www.flexclip.com/res/preview/720p/countdown-timer-intro.mp4'];
+    let currentVideo = 0;
+
+    function nextVideo() {
+      currentVideo++;
+      if (currentVideo >= videos.length) {
+        currentVideo = 0;
+      }
+      document.getElementById('video').src = videos[currentVideo];
+    }
+
+    function previousVideo() {
+      currentVideo--;
+      if (currentVideo < 0) {
+        currentVideo = videos.length - 1;
+      }
+      document.getElementById('video').src = videos[currentVideo];
+    }
+
+    function changeVideo(index) {
+      currentVideo = index;
+      document.getElementById('video').src = videos[currentVideo];
+    }
+
+    document.getElementById('video').addEventListener('ended', function () {
+      nextVideo();
+      document.getElementById('video').play();
+    });
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      let video = document.getElementById("video");
+      video.play();
+    }
+  </script>
+</body>
+</html>
